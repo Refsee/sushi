@@ -1,0 +1,96 @@
+@import "../../shared/styles/var";
+@import "../../shared/styles/mixins";
+@import "../../shared/styles/base";
+
+.footer-inner {
+  border-top: 4px solid $mainColor;
+  padding: 20px 30px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  img {
+    width: 120px;
+  }
+}
+
+.menu-list {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-item {
+  a {
+    &:hover {
+      color: $mainColor;
+    }
+  }
+}
+
+.footer-info {
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+
+  &__text {
+    text-align: center;
+    line-height: 18px;
+    font-size: 14px;
+  }
+}
+
+.footer-bottom {
+  @include flexbetween();
+}
+
+.copyright {
+  font-size: 12px;
+}
+
+.pay-cards {
+  width: 200px;
+  @include flexbetween();
+}
+
+.pay-card-item {
+  @include flexCenter();
+  border: 1px solid #ccc;
+  padding: 5px 12px;
+  border-radius: 5px;
+  img {
+    width: 30px;
+    height: 20px;
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  span {
+    font-size: 12px;
+  }
+  &__icons {
+    display: flex;
+    margin-left: 10px;
+  }
+}
+
+.main-btn {
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.footer-dev-logo {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  span {
+    font-size: 12px;
+  }
+}

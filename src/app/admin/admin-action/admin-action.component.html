@@ -1,0 +1,85 @@
+<div class="container">
+  <button class="btn btn-add" (click)="openFormAdd()">Додати акцію</button>
+  <div class="table" *ngIf="!isOpenForm; else form">
+    <div class="table-item">
+      <p>Дата</p>
+      <p>Назва</p>
+      <p>Заголовок</p>
+      <p>Опис</p>
+      <p>Картинка</p>
+      <p>Дії</p>
+    </div>
+    <div class="table-item" *ngFor="let action of adminAction">
+      <p>{{ action.date | date: "d.M.yy" }}</p>
+      <p>{{ action.name }}</p>
+      <p>{{ action.title }}</p>
+      <p>
+        {{ action.description | slice:0:60 }} 
+        <span *ngIf="action.description.length > 60">...</span> 
+      </p>
+      <p><img [src]="action.imagePath" width="50px" /></p>
+      <p>
+        <button class="btn-actions" (click)="editAction(action)">
+          Редагувати
+        </button>
+        <button class="btn-actions" (click)="deleteAction(action)">
+          Видалити
+        </button>
+      </p>
+    </div>
+  </div>
+  <ng-template #form>
+    <form [formGroup]="formAction" (ngSubmit)="addAction()">
+      <div class="form-group fd">
+        <input
+          formControlName="name"
+          class="form-control-input"
+          type="text"
+          placeholder="*Назва"
+        />
+        <input
+          formControlName="title"
+          class="form-control-input"
+          type="text"
+          placeholder="*Заголовок"
+        />
+      </div>
+      <div class="form-group">
+        <textarea
+          formControlName="description"
+          class="form-control-area"
+          type="text"
+          placeholder="*Опис"
+        ></textarea>
+      </div>
+
+      <ng-container *ngIf="isUploaded; else formFile">
+        <div class="image-response">
+          <img [src]="imageByControl('imagePath')" alt="" />
+          <button
+            type="button"
+            class="btn-danger"
+            (click)="deleteImage(imageByControl('imagePath'))"
+          >
+            Видалити
+          </button>
+        </div>
+      </ng-container>
+
+      <ng-template #formFile>
+        <div class="form-group gf">
+          <input type="file" (change)="upload($event)" />
+          <div class="progress">
+            <div class="progress-bar" [style.width.%]="uploadPercent"></div>
+          </div>
+        </div>
+      </ng-template>
+
+      <div class="form-group">
+        <button [disabled]="formAction.invalid" class="main-btn" type="submit">
+          {{ isEdit ? "Зберегти" : "Добавити" }}
+        </button>
+      </div>
+    </form>
+  </ng-template>
+</div>

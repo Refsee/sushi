@@ -1,0 +1,37 @@
+@import "../../shared/styles/var";
+@import "../../shared/styles/base";
+
+.container {
+  width: 82%;
+  margin: 50px auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delivey-info {
+  width: 49%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-zone {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.text {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.text--yellow {
+  color: #cece37;
+}
+
+.text--green {
+  color: #066e06;
+}

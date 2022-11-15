@@ -1,0 +1,255 @@
+@import "../../shared/styles/var";
+@import "../../shared/styles/mixins";
+@import "../../shared/styles/base";
+
+.header-inner {
+  height: 95px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  width: 170px;
+  height: 100%;
+  background-color: $mainColor;
+  &__link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__img {
+    width: 78%;
+  }
+}
+
+.header-nav {
+  margin-left: 5px;
+  width: 370px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link {
+  width: 70px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  // border: 2px solid $mainColor;
+  &__img {
+    width: 28px;
+    height: 30px;
+  }
+  &__name {
+    margin-top: 3px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.burger-menu {
+  margin-right: 40px;
+  position: relative;
+  i {
+    font-size: 25px;
+    // z-index: 3;
+    position: relative;
+  }
+}
+
+.icon-burger {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-nav {
+  position: absolute;
+  left: -30px;
+  top: -25px;
+  width: 240px;
+  height: 260px;
+  border: 2px solid $mainColor;
+  border-radius: 7px;
+  background-color: white;
+  padding: 31px 25px;
+  z-index: 1;
+
+  i {
+    font-size: 30px;
+    width: 30px;
+    margin-left: 17px;
+    cursor: pointer;
+  }
+}
+
+.burger-nav {
+  margin-top: 30px;
+}
+
+.burger-item {
+  margin-bottom: 7px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease-in;
+
+  &:hover {
+    border-color: $mainColor;
+    cursor: pointer;
+  }
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+}
+
+.main-btn {
+  width: 40px;
+  height: 40px;
+}
+
+.header-info {
+  @include flexCenter();
+  margin: 0 30px;
+  flex-direction: column;
+}
+
+.header-phone {
+  font-weight: bold;
+  transition: color 0.2s ease-out;
+  &:hover {
+    color: $mainColor;
+    cursor: pointer;
+  }
+}
+.header-work-time {
+  font-size: 12px;
+  b {
+    font-size: 12px;
+  }
+}
+
+.icon-user {
+  margin: 0 20px;
+  @include flexCenter();
+  border-radius: 5px;
+  width: 45px;
+  height: 45px;
+  i {
+    font-size: 25px;
+  }
+}
+
+.header-busket {
+  @include flexCenter();
+  width: 140px;
+  height: 100%;
+  background-color: $mainColor;
+}
+
+.basket-count {
+  position: relative;
+  span {
+    @include wh(22px, 22px, 14px);
+    position: absolute;
+    top: -5px;
+    left: 20px;
+    border-radius: 50%;
+    background-color: white;
+    text-align: center;
+    line-height: 22px;
+  }
+}
+.basket-img {
+  width: 90%;
+}
+
+.basket-price {
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.an--border {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 0;
+    height: 0;
+    border-radius: 7px;
+    border: 2px solid transparent;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 0;
+    height: 0;
+    border-radius: 7px;
+    border: 2px solid transparent;
+  }
+
+  &:hover::before {
+    animation: border-one 0.3s linear forwards;
+  }
+  &:hover::after {
+    animation: border-two 0.3s linear forwards;
+    animation-delay: 0.3s;
+  }
+}
+
+@keyframes border-one {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: $mainColor;
+  }
+  50% {
+    width: 100%;
+    height: 0;
+    border-top-color: $mainColor;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: $mainColor;
+    border-right-color: $mainColor;
+  }
+}
+@keyframes border-two {
+  0% {
+    width: 0;
+    height: 0;
+    border-bottom-color: $mainColor;
+  }
+  50% {
+    width: 100%;
+    height: 0;
+    border-bottom-color: $mainColor;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-bottom-color: $mainColor;
+    border-left-color: $mainColor;
+  }
+}

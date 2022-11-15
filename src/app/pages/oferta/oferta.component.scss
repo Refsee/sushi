@@ -1,0 +1,22 @@
+@import '../../shared/styles/var';
+@import '../../shared/styles/base';
+
+
+
+.container{
+    margin: auto;
+    width: 800px;
+}
+.row{
+    margin-bottom: 30px;
+}
+.text{
+    font-size: 18px;
+    line-height: 25px;
+    color: #5A5A5A;
+}
+.link-main{
+    font-weight: bold;
+    color: $mainColor;
+}
+

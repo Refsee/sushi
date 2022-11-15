@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="nav">
+      <div class="nav-list">
+        <button
+          class="nav-item"
+          [routerLink]="['action']"
+          routerLinkActive="active"
+        >
+          Акції
+        </button>
+        <button
+          class="nav-item"
+          [routerLink]="['category']"
+          routerLinkActive="active"
+        >
+          Категорії
+        </button>
+        <button
+          class="nav-item"
+          [routerLink]="['goods']"
+          routerLinkActive="active"
+        >
+          Товари
+        </button>
+        <button
+          class="nav-item"
+          [routerLink]="['order']"
+          routerLinkActive="active"
+        >
+          Замовлення
+        </button>
+        <button class="main-btn">Вихід</button>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+  

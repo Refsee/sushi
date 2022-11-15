@@ -1,0 +1,21 @@
+@mixin flexCenter(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flexbetween(){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin wh($width, $height, $size){
+    width: $width;
+    height: $height;
+    font-size: $size;
+}
+
+@mixin tableItem() {
+    display: flex;
+    padding: 15px 0;
+   border-bottom: 1px solid #ccc;
+}

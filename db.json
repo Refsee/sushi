@@ -1,0 +1,26 @@
+{
+  "actions": [
+    {
+      "name": "5 у подарунок",
+      "title": "4=5",
+      "description": "\nЗамовляйте 5 ролів, а платіть за 4.\nЗамовляйте 10 ролів, а платіть за 8 і так далі.\nБезкоштовним вважається рол з найменшою вартістю.\nЦя акція не поєднується з іншими акціями.",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2Fimgonline-com-ua-compressed-ajbic74qfau00-scaled-697x379.jpg?alt=media&token=9c1f0f4b-08b5-41b3-82b6-958a1bba6bae",
+      "date": "2022-11-15T09:54:23.996Z",
+      "id": 1
+    }
+  ],
+  "categories": [
+    {
+      "name": "Акції",
+      "path": "actions",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Fcategory%2Fnav-img-gift.svg?alt=media&token=d1e4661f-7345-4fb7-91b4-f5e7159e08b7",
+      "id": 1
+    },
+    {
+      "name": "Роли",
+      "path": "roles",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Fcategory%2Fnav-img-rolls.svg?alt=media&token=643777ae-02ff-42fd-b551-6f877e14fc5b",
+      "id": 2
+    }
+  ]
+}

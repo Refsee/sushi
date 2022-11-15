@@ -1,0 +1,42 @@
+@import "../../shared/styles/var";
+@import "../../shared/styles/mixins";
+@import "../../shared/styles/base";
+
+.container {
+  margin: auto;
+  width: 800px;
+}
+
+.slogan {
+  font-size: 33px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.list {
+  margin-top: 20px;
+  margin-left: 20px;
+  list-style: circle;
+}
+.item {
+  line-height: 30px;
+}
+
+.block-info {
+  @include flexbetween();
+  margin-bottom: 50px;
+  margin-top: 30px;
+  &__rigth {
+    width: 350px;
+  }
+}
+
+.img-info {
+  width: 400px;
+  border-radius: 15px;
+}
+
+.info-title {
+  font-size: 27px;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,40 @@
+@import '../shared/styles/var';
+@import '../shared/styles/base';
+
+.container-fluid{
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+.nav{
+    width: 150px;
+}
+.nav-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-item{
+    @include wh(100%,60px,18px);
+    text-align: center;
+    line-height:normal;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-left: none;
+}
+
+.main-btn{
+    @include wh(120px,50px,18px);
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+
+.active{
+    border: none;
+    border-top: 4px solid $mainColor;
+    font-weight: bold;
+}
