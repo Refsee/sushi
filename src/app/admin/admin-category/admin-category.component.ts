@@ -1,15 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  deleteObject,
-  getDownloadURL,
-  percentage,
-  Storage,
-  uploadBytesResumable,
-} from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ref } from '@firebase/storage';
+import { ToastrService } from 'ngx-toastr';
 import { ICategoryResponse } from 'src/app/shared/interfaces/category/category.interface';
 import { CategoryService } from 'src/app/shared/services/category/category.service';
+import { UploadService } from 'src/app/shared/services/upload.service';
 
 @Component({
   selector: 'app-admin-category',
@@ -22,17 +17,15 @@ export class AdminCategoryComponent implements OnInit {
   public formCategory!: FormGroup;
   public isEdit: boolean = false;
 
-
-  public isUploaded:boolean = false;
+  public isUploaded: boolean = false;
 
   private categoryEditId!: number;
-
-  public uploadPercent!: number;
 
   constructor(
     private fb: FormBuilder,
     private categoryService: CategoryService,
-    public storage: Storage
+    private uploadService: UploadService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -67,17 +60,18 @@ export class AdminCategoryComponent implements OnInit {
         .update(this.formCategory.value, this.categoryEditId)
         .subscribe(() => {
           this.allCategories();
+          this.toastr.success('Product successfully updated');
         });
     } else {
       this.categoryService.create(this.formCategory.value).subscribe(() => {
         this.allCategories();
+        this.toastr.success('Product successfully created');
       });
     }
     this.isEdit = false;
     this.formCategory.reset();
     this.isUploaded = false;
     this.openFormAdd();
-    this.uploadPercent = 0;
   }
 
   editCategory(category: ICategoryResponse): void {
@@ -95,15 +89,17 @@ export class AdminCategoryComponent implements OnInit {
   }
 
   deleteCategory(category: ICategoryResponse): void {
-    this.categoryService
-      .delete(category.id)
-      .subscribe(() => this.allCategories());
+    this.categoryService.delete(category.id).subscribe(() => {
+      this.allCategories();
+      this.toastr.success('Product successfully deleted');
+    });
     this.deleteImage(category.imagePath);
   }
 
   upload(event: any): void {
     const file = event.target.files[0];
-    this.uploadFile('images/category', file.name, file)
+    this.uploadService
+      .uploadFile('images/action', file.name, file)
       .then((data) => {
         this.formCategory.patchValue({
           imagePath: data,
@@ -115,32 +111,22 @@ export class AdminCategoryComponent implements OnInit {
       });
   }
 
-  async uploadFile(folder: string, name: string, file: File): Promise<string> {
-    const path: string = `${folder}/${name}`;
-    let url: string = '';
-    const storageRef = ref(this.storage, path);
-    const task = uploadBytesResumable(storageRef, file);
-    percentage(task).subscribe((data) => (this.uploadPercent = data.progress));
-    await task;
-    url = await getDownloadURL(storageRef);
-    return Promise.resolve(url);
-  }
-
   deleteImage(url: string): void {
-    const task = ref(this.storage, url);
-    deleteObject(task)
+    this.uploadService
+      .deleteUploadFile(url)
       .then(() => {
         this.isUploaded = false;
-        this.uploadPercent = 0;
         this.formCategory.patchValue({
           imagePath: null,
         });
 
-        this.categoryService
-          .update(this.formCategory.value, this.categoryEditId)
-          .subscribe(() => {
-            this.allCategories();
-          });
+        if (this.isEdit) {
+          this.categoryService
+            .update(this.formCategory.value, this.categoryEditId)
+            .subscribe(() => {
+              this.allCategories();
+            });
+        }
         this.isUploaded = false;
       })
       .catch((e: any) => console.log(e));

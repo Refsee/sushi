@@ -1,15 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  deleteObject,
-  getDownloadURL,
-  percentage,
-  ref,
-  Storage,
-  uploadBytesResumable,
-} from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { IActionResponse } from 'src/app/shared/interfaces/action/action.interface';
 import { ActionService } from 'src/app/shared/services/action/action.service';
+import { UploadService } from 'src/app/shared/services/upload.service';
 
 @Component({
   selector: 'app-admin-action',
@@ -26,12 +20,11 @@ export class AdminActionComponent implements OnInit {
 
   public isUploaded: boolean = false;
 
-  public uploadPercent!: number;
-
   constructor(
     private fb: FormBuilder,
     private actionService: ActionService,
-    public storage: Storage
+    private uploadService: UploadService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -67,19 +60,20 @@ export class AdminActionComponent implements OnInit {
         )
         .subscribe(() => {
           this.allAction();
+          this.toastr.success('Product successfully updated');
         });
     } else {
       this.actionService
         .create({ ...this.formAction.value, date: new Date() })
         .subscribe(() => {
           this.allAction();
+          this.toastr.success('Product successfully created');
         });
     }
     this.isEdit = false;
     this.formAction.reset();
     this.isUploaded = false;
     this.openFormAdd();
-    this.uploadPercent = 0;
   }
 
   editAction(action: IActionResponse): void {
@@ -98,13 +92,17 @@ export class AdminActionComponent implements OnInit {
   }
 
   deleteAction(action: IActionResponse): void {
-    this.actionService.delete(action.id).subscribe(() => this.allAction());
+    this.actionService.delete(action.id).subscribe(() => {
+      this.allAction();
+      this.toastr.success('Product successfully deleted');
+    });
     this.deleteImage(action.imagePath);
   }
 
   upload(event: any): void {
     const file = event.target.files[0];
-    this.uploadFile('images/action', file.name, file)
+    this.uploadService
+      .uploadFile('images/action', file.name, file)
       .then((data) => {
         this.formAction.patchValue({
           imagePath: data,
@@ -116,32 +114,23 @@ export class AdminActionComponent implements OnInit {
       });
   }
 
-  async uploadFile(folder: string, name: string, file: File): Promise<string> {
-    const path: string = `${folder}/${name}`;
-    let url: string = '';
-    const storageRef = ref(this.storage, path);
-    const task = uploadBytesResumable(storageRef, file);
-    percentage(task).subscribe((data) => (this.uploadPercent = data.progress));
-    await task;
-    url = await getDownloadURL(storageRef);
-    return Promise.resolve(url);
-  }
-
   deleteImage(url: string): void {
-    const task = ref(this.storage, url);
-    deleteObject(task)
+    this.uploadService
+      .deleteUploadFile(url)
       .then(() => {
         this.isUploaded = false;
-        this.uploadPercent = 0;
         this.formAction.patchValue({
           imagePath: null,
         });
 
-        this.actionService
-          .update(this.formAction.value, this.actionEditId)
-          .subscribe(() => {
-            this.allAction();
-          });
+        if (this.isEdit) {
+          this.actionService
+            .update(this.formAction.value, this.actionEditId)
+            .subscribe(() => {
+              this.allAction();
+            });
+        }
+
         this.isUploaded = false;
       })
       .catch((e: any) => console.log(e));

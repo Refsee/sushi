@@ -1,12 +1,11 @@
 @import "../../shared/styles/var";
 @import "../../shared/styles/mixins";
+@import "../../shared//styles/animate";
 @import "../../shared/styles/base";
 
 .header-inner {
   height: 95px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexbetween();
 }
 
 .header-logo {
@@ -16,9 +15,7 @@
   &__link {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCenter();
   }
   &__img {
     width: 78%;
@@ -28,9 +25,7 @@
 .header-nav {
   margin-left: 5px;
   width: 370px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexbetween();
 }
 
 .nav-list {
@@ -41,11 +36,8 @@
 .link {
   width: 70px;
   height: 65px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter();
   flex-direction: column;
-  // border: 2px solid $mainColor;
   &__img {
     width: 28px;
     height: 30px;
@@ -62,7 +54,6 @@
   position: relative;
   i {
     font-size: 25px;
-    // z-index: 3;
     position: relative;
   }
 }
@@ -70,9 +61,7 @@
 .icon-burger {
   width: 45px;
   height: 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter();
 }
 
 .menu-nav {
@@ -182,74 +171,4 @@
 .basket-price {
   margin: 0 10px;
   font-size: 18px;
-}
-
-.an--border {
-  position: relative;
-  &:before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: 0;
-    height: 0;
-    border-radius: 7px;
-    border: 2px solid transparent;
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    right: -2px;
-    width: 0;
-    height: 0;
-    border-radius: 7px;
-    border: 2px solid transparent;
-  }
-
-  &:hover::before {
-    animation: border-one 0.3s linear forwards;
-  }
-  &:hover::after {
-    animation: border-two 0.3s linear forwards;
-    animation-delay: 0.3s;
-  }
-}
-
-@keyframes border-one {
-  0% {
-    width: 0;
-    height: 0;
-    border-top-color: $mainColor;
-  }
-  50% {
-    width: 100%;
-    height: 0;
-    border-top-color: $mainColor;
-  }
-  100% {
-    width: 100%;
-    height: 100%;
-    border-top-color: $mainColor;
-    border-right-color: $mainColor;
-  }
-}
-@keyframes border-two {
-  0% {
-    width: 0;
-    height: 0;
-    border-bottom-color: $mainColor;
-  }
-  50% {
-    width: 100%;
-    height: 0;
-    border-bottom-color: $mainColor;
-  }
-  100% {
-    width: 100%;
-    height: 100%;
-    border-bottom-color: $mainColor;
-    border-left-color: $mainColor;
-  }
 }

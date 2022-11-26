@@ -1,0 +1,54 @@
+@import "../../shared/styles/var";
+@import "../../shared/styles/mixins";
+@import "../../shared/styles/imitations";
+@import "../../shared/styles/base";
+
+.btn {
+  margin-bottom: 30px;
+}
+
+.table-item {
+  @include tableItem();
+
+  &:nth-of-type(1) {
+    border-bottom: 2px solid $mainColor;
+    font-weight: bold;
+  }
+  p {
+    &:nth-of-type(1) {
+      width: 4%;
+    }
+
+    &:nth-of-type(2) {
+      width: 9%;
+    }
+
+    &:nth-of-type(3) {
+      width: 12%;
+    }
+
+    &:nth-of-type(4) {
+      width: 17%;
+    }
+    &:nth-of-type(5) {
+      width: 20%;
+    }
+    &:nth-of-type(6),
+    &:nth-of-type(7) {
+      width: 8%;
+    }
+    &:nth-of-type(8),
+    &:nth-of-type(9) {
+      width: 10%;
+      text-align: center;
+    }
+  }
+}
+
+.form-control-area {
+  height: 100px;
+}
+
+.main-btn {
+  @extend %btn-admin-add;
+}

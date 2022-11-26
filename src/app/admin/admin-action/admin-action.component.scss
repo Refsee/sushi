@@ -38,11 +38,7 @@
 }
 
 .form-control-area{
-  @include wh(500px,300px,16px);
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  resize: none;
+  height: 300px
 }
 
 

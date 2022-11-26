@@ -46,6 +46,7 @@
   transition: background-color 0.1s ease-in;
   &:hover {
     background-color: transparent;
+    cursor: pointer;
   }
   &:active {
     background-color: aqua;
@@ -155,4 +156,16 @@
   margin-left: 50px;
   width: 100px;
   height: 30px;
+}
+
+
+
+
+.form-control-area{
+  width: 500px;
+  padding: 20px;
+  font-size:16px ;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: none;
 }

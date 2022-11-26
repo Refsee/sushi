@@ -14,8 +14,8 @@
       <p>{{ action.name }}</p>
       <p>{{ action.title }}</p>
       <p>
-        {{ action.description | slice:0:60 }} 
-        <span *ngIf="action.description.length > 60">...</span> 
+        {{ action.description | slice: 0:60 }}
+        <span *ngIf="action.description.length > 60">...</span>
       </p>
       <p><img [src]="action.imagePath" width="50px" /></p>
       <p>
@@ -69,9 +69,6 @@
       <ng-template #formFile>
         <div class="form-group gf">
           <input type="file" (change)="upload($event)" />
-          <div class="progress">
-            <div class="progress-bar" [style.width.%]="uploadPercent"></div>
-          </div>
         </div>
       </ng-template>
 

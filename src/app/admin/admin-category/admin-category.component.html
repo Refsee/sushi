@@ -1,5 +1,7 @@
 <div class="container">
-  <button class="btn btn-add" (click)="openFormAdd()" [disabled]="isEdit" >Додати категорію</button>
+  <button class="btn btn-add" (click)="openFormAdd()" [disabled]="isEdit">
+    Додати категорію
+  </button>
   <div class="table" *ngIf="!isOpenForm; else form">
     <div class="table-item">
       <p>№</p>
@@ -56,9 +58,6 @@
       <ng-template #formFile>
         <div class="form-group gf">
           <input type="file" (change)="upload($event)" />
-          <div class="progress">
-            <div class="progress-bar" [style.width.%]="uploadPercent"></div>
-          </div>
         </div>
       </ng-template>
 

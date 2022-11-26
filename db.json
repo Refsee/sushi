@@ -2,25 +2,101 @@
   "actions": [
     {
       "name": "5 у подарунок",
-      "title": "4=5",
+      "title": "3+1=5",
       "description": "\nЗамовляйте 5 ролів, а платіть за 4.\nЗамовляйте 10 ролів, а платіть за 8 і так далі.\nБезкоштовним вважається рол з найменшою вартістю.\nЦя акція не поєднується з іншими акціями.",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2Fimgonline-com-ua-compressed-ajbic74qfau00-scaled-697x379.jpg?alt=media&token=9c1f0f4b-08b5-41b3-82b6-958a1bba6bae",
-      "date": "2022-11-15T09:54:23.996Z",
+      "date": "2022-11-19T21:13:11.193Z",
       "id": 1
+    },
+    {
+      "name": "Рол тижня",
+      "title": "Рол тижня",
+      "description": "Щотижня діє знижка 50% на один з ролів у нашому меню.\n“Рол тижня” ви можете знайти на головній сторінці нашого сайту.\nЗнижка діє при мінімальній сумі замовлення 300 грн.\nЦя акція не поєднується з іншими акціями.",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2Fimgonline-com-ua-697x379.jpg?alt=media&token=3bc59351-d9a2-4d26-ac0e-6dc09956076f",
+      "date": "2022-11-16T09:56:46.803Z",
+      "id": 2
     }
   ],
   "categories": [
-    {
-      "name": "Акції",
-      "path": "actions",
-      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Fcategory%2Fnav-img-gift.svg?alt=media&token=d1e4661f-7345-4fb7-91b4-f5e7159e08b7",
-      "id": 1
-    },
     {
       "name": "Роли",
       "path": "roles",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Fcategory%2Fnav-img-rolls.svg?alt=media&token=643777ae-02ff-42fd-b551-6f877e14fc5b",
       "id": 2
+    },
+    {
+      "name": "Сети",
+      "path": "sets",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Fcategory%2Fnav-img-sets.svg?alt=media&token=1fe7087b-0a28-4034-84cf-4a54248796e9",
+      "id": 3
+    }
+  ],
+  "goods": [
+    {
+      "category": {
+        "name": "Роли",
+        "path": "roles",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Fcategory%2Fnav-img-rolls.svg?alt=media&token=643777ae-02ff-42fd-b551-6f877e14fc5b",
+        "id": 2
+      },
+      "name": "Філадельфія з лососем",
+      "path": "filadelfiya-z-lososem",
+      "ingredients": "Риc, крем сир, огірок, лосось",
+      "weight": 280,
+      "price": 232,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2F1.-filadelfiya-z-lososem.jpg?alt=media&token=99872bec-03a9-4679-ba1c-db329500af9a",
+      "count": [
+        1
+      ],
+      "id": 1
+    },
+    {
+      "category": {
+        "name": "Роли",
+        "path": "roles",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Fcategory%2Fnav-img-rolls.svg?alt=media&token=643777ae-02ff-42fd-b551-6f877e14fc5b",
+        "id": 2
+      },
+      "name": "Макі з креветкою",
+      "path": "maki-z-krevetkoyu",
+      "ingredients": "Рис, норі, креветка",
+      "weight": 120,
+      "price": 160,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2F4.-maki-z-krevetkoyu..jpg?alt=media&token=ac370201-c16a-49aa-8849-e628c1edee48",
+      "count": 1,
+      "id": 3
+    },
+    {
+      "category": {
+        "name": "Роли",
+        "path": "roles",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Fcategory%2Fnav-img-rolls.svg?alt=media&token=643777ae-02ff-42fd-b551-6f877e14fc5b",
+        "id": 2
+      },
+      "name": "Мексиканський",
+      "path": "meksykansky",
+      "ingredients": "Рис, крем сир, креветка, огірок, кунжут, лосось, гуакамоле, шрірача",
+      "weight": 370,
+      "price": 360,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2F4.-meksykanskyj.jpg?alt=media&token=3bb24b0e-7bef-4ad3-9d75-d3e62e83773f",
+      "count": 1,
+      "id": 4
+    },
+    {
+      "category": {
+        "name": "Сети",
+        "path": "sets",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Fcategory%2Fnav-img-sets.svg?alt=media&token=1fe7087b-0a28-4034-84cf-4a54248796e9",
+        "id": 3
+      },
+      "name": "Сет Філадельфія",
+      "path": "filadelfia-set/",
+      "ingredients": "Філадельфія: з лососем / в кунжуті / з тунцем / з вугрем",
+      "weight": 1050,
+      "price": 950,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2Fimgonline-com-ua-compressed.jpg?alt=media&token=09cf6666-b4c0-432a-8724-fa5956f099cc",
+      "count": 1,
+      "id": 5
     }
   ]
 }

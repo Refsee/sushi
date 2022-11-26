@@ -1,2 +1,105 @@
 @import '../../shared/styles/var';
+@import '../../shared//styles/animate';
+@import '../../shared//styles/mixins';
 @import '../../shared/styles/base';
+
+
+.container{
+width: 100%;
+margin: 50px  auto;
+padding: 0 50px;
+}
+.row{
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.categories-list{
+    display: flex;
+}
+
+.categories-list-item{
+    @include wh(100%,60px,18px);
+    text-align: center;
+    line-height:normal;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    margin-left: -1px;
+}
+
+
+.product-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product{
+    margin-top: 60px;
+    width: 300px;
+    padding: 15px 10px;
+z-index: 2;
+    &__img{
+        @include flexCenter();
+        height: 250px;
+    }
+    &__title{
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+    }
+    &__description{
+        margin: 15px 0;
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+        color: #5A5A5A;
+    }
+    &__ingrediens{
+        width: 200px;
+    }
+    &__weight{
+        font-weight: bold;
+    }
+
+    &__controls{
+        @include flexbetween();
+    }
+    &__price{
+        span{
+            font-weight: bold;
+        }
+    }
+    &__count{
+        border: 1px solid #ccc;
+        border-radius: 7px;
+        padding: 5px;
+        width: 100px;
+        height: 40px;
+        @include flexbetween();
+    }
+}
+
+.btn-count{
+    @include flexCenter();
+    @include wh(30px,30px,24px);
+    background-color: transparent;
+    border-radius: 5px;
+    &:hover{
+        background-color: $mainColor;
+    }
+}
+
+
+.main-btn{
+    @include wh(85px,40px,14px);
+    text-transform: uppercase;
+}
+
+.active{
+    border: none;
+    border-left:none;
+    border-top: 4px solid $mainColor;
+    font-weight: bold;
+}
+
+

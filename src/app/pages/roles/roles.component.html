@@ -1,3 +1,52 @@
 <div class="center-info">
-    <h2 class="page-title">Роли</h2>
+  <h2 class="page-title">Роли</h2>
+</div>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="categories-menu">
+        <div class="categories-list">
+          <button
+            *ngFor="let categoryFilter of filterCategories"
+            class="categories-list-item"
+            [routerLink]="['#']"
+            routerLinkActive="active"
+          >
+            {{ categoryFilter }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop">
+      <div class="product-row">
+        <div *ngFor="let product of goods">
+          <div class="product an--border">
+            <div class="product__img">
+              <img [src]="product.imagePath" alt="" width="280px" />
+            </div>
+            <div class="product__title">{{ product.name }}</div>
+            <div class="product__description">
+              <div class="product__ingrediens">{{ product.ingredients }}</div>
+              <div class="product__weight">{{ product.weight }} г</div>
+            </div>
+            <div class="product__controls">
+              <div class="product__price">
+                <span>{{ product.price }}</span>
+                грн
+              </div>
+              <div class="product__count">
+                <button class="btn-count">-</button>
+                {{ product.count }}
+                <button class="btn-count">+</button>
+              </div>
+              <div class="product__btn">
+                <button class="main-btn">замовити</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</section>

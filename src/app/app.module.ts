@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,16 +29,19 @@ import { AdminCategoryComponent } from './admin/admin-category/admin-category.co
 import { AdminGoodsComponent } from './admin/admin-goods/admin-goods.component';
 import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
 
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent, AboutComponent, HomeComponent, ActionsComponent, ActionInfoComponent, DeliveryComponent, RolesComponent, SetsComponent, DrinkComponent, SaucesComponent, OfertaComponent, AdminComponent, AdminActionComponent, AdminCategoryComponent, AdminGoodsComponent, AdminOrderComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
