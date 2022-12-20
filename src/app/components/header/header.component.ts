@@ -7,18 +7,17 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   public isOpenMenu = false;
-
   private skipClick = false;
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  show(): void {
+  showMenu(): void {
     this.isOpenMenu = true;
     this.skipClick = true;
   }
-  
+
   @HostListener('window:click')
   hide(): void {
     if (this.skipClick) {

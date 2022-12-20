@@ -158,14 +158,47 @@
   height: 30px;
 }
 
-
-
-
-.form-control-area{
+.form-control-area {
   width: 500px;
   padding: 20px;
-  font-size:16px ;
+  font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 10px;
   resize: none;
+}
+
+.controls {
+  @include flexbetween();
+  &__price {
+    span {
+      font-weight: bold;
+    }
+  }
+  &__count {
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 5px;
+    width: 100px;
+    height: 40px;
+    @include flexbetween();
+  }
+}
+
+.input-count {
+  width: 30px;
+  padding: 0 5px;
+  font-size: 18px;
+}
+
+.btn-count {
+  @include flexCenter();
+  @include wh(30px, 30px, 24px);
+  background-color: transparent;
+  border-radius: 5px;
+  &:hover {
+    background-color: $mainColor;
+  }
+  &:active {
+    transform: scale(0.8);
+  }
 }

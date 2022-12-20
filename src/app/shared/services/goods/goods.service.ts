@@ -17,6 +17,14 @@ export class GoodsService {
     return this.http.get<IGoodsResponse[]>(this.api.goods);
   }
 
+  getAllByCategory(name: string): Observable<IGoodsResponse[]> {
+    return this.http.get<IGoodsResponse[]>(`${this.api.goods}?category.path=${name}`);
+  }
+
+  getOne(id: number): Observable<IGoodsResponse> {
+    return this.http.get<IGoodsResponse>(`${this.api.goods}/${id}`);
+  }
+
   create(category: IGoodsRequest): Observable<IGoodsResponse> {
     return this.http.post<IGoodsResponse>(this.api.goods, category);
   }

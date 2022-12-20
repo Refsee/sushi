@@ -1,9 +1,19 @@
 <div class="center-info">
-    <h2 class="page-title">Акції</h2>
+  <h2 class="page-title">Акції</h2>
+</div>
+<div class="row">
+  <div *ngFor="let action of actions">
+      <a class="block-info" [routerLink]="[ '/action/', action.id ]">
+        <img
+          class="block-info__img"
+          [src]="action.imagePath"
+          alt=""
+          srcset=""
+        />
+        <p class="block-info__text">{{ action.title }}</p>
+      </a>
+    <div class="controls">
+      <button class="main-btn" [routerLink]="[ '/action/', action.id ]">Дізнатись більше</button>
+    </div>
   </div>
-  <div class="row" >
-    <a class="block-info" *ngFor="let action of actions">
-      <img class="block-info__img" [src]="action.imagePath" alt="" srcset="">
-      <p class="block-info__text">{{action.title}}</p>
-    </a>
-  </div>
+</div>

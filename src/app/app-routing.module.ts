@@ -9,26 +9,33 @@ import { AboutComponent } from './pages/about/about.component';
 import { ActionInfoComponent } from './pages/action-info/action-info.component';
 import { ActionsComponent } from './pages/actions/actions.component';
 import { DeliveryComponent } from './pages/delivery/delivery.component';
-import { DrinkComponent } from './pages/drink/drink.component';
 import { HomeComponent } from './pages/home/home.component';
 import { OfertaComponent } from './pages/oferta/oferta.component';
-import { RolesComponent } from './pages/roles/roles.component';
-import { SaucesComponent } from './pages/sauces/sauces.component';
-import { SetsComponent } from './pages/sets/sets.component';
+import { ProductInfoComponent } from './pages/product-info/product-info.component';
+import { ProductComponent } from './pages/product/product.component';
+import { ActionResolver } from './shared/resolves/action.resolver';
+import { ProductResolver } from './shared/resolves/product.resolver';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'actions', component: ActionsComponent },
-  { path: 'action-info', component: ActionInfoComponent },
-  { path: 'roles', component: RolesComponent },
-  { path: 'sets', component: SetsComponent },
-  { path: 'drink', component: DrinkComponent },
-  { path: 'sauces', component: SaucesComponent },
+  { path: 'action', component: ActionsComponent,
+  },
+  { path: 'action/:id', component: ActionInfoComponent,
+    resolve: {
+      actionInfo: ActionResolver,
+    },
+  },
+  { path: 'product/:category', component: ProductComponent,
+  },
+  { path: 'product/:category/:id',
+    component: ProductInfoComponent,
+    resolve: {
+      productInfo: ProductResolver,
+    },
+  },
   { path: 'delivery', component: DeliveryComponent },
   { path: 'about', component: AboutComponent },
   { path: 'dogovir-oferta', component: OfertaComponent },
-
-
   {
     path: 'admin',
     component: AdminComponent,
@@ -37,16 +44,13 @@ const routes: Routes = [
       { path: 'category', component: AdminCategoryComponent },
       { path: 'goods', component: AdminGoodsComponent },
       { path: 'order', component: AdminOrderComponent },
-      { path: '', redirectTo:'action', pathMatch:'full'}
-  
-  ],
+      { path: '', redirectTo: 'action', pathMatch: 'full' },
+    ],
   },
-
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

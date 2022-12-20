@@ -2,18 +2,18 @@
   "actions": [
     {
       "name": "5 у подарунок",
-      "title": "3+1=5",
-      "description": "\nЗамовляйте 5 ролів, а платіть за 4.\nЗамовляйте 10 ролів, а платіть за 8 і так далі.\nБезкоштовним вважається рол з найменшою вартістю.\nЦя акція не поєднується з іншими акціями.",
+      "title": "\"3+1=5\"",
+      "description": "Замовляйте 5 ролів, а платіть за 4.Замовляйте 10 ролів, а платіть за 8 і так далі.Безкоштовним вважається рол з найменшою вартістю.Ця акція не поєднується з іншими акціями.",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2Fimgonline-com-ua-compressed-ajbic74qfau00-scaled-697x379.jpg?alt=media&token=9c1f0f4b-08b5-41b3-82b6-958a1bba6bae",
-      "date": "2022-11-19T21:13:11.193Z",
+      "date": "2022-12-06T13:31:14.521Z",
       "id": 1
     },
     {
       "name": "Рол тижня",
-      "title": "Рол тижня",
-      "description": "Щотижня діє знижка 50% на один з ролів у нашому меню.\n“Рол тижня” ви можете знайти на головній сторінці нашого сайту.\nЗнижка діє при мінімальній сумі замовлення 300 грн.\nЦя акція не поєднується з іншими акціями.",
+      "title": "50% знижки на \"Рол тижня\"",
+      "description": "Щотижня діє знижка 50% на один з ролів у нашому меню. “Рол тижня” ви можете знайти на головній сторінці нашого сайту. Знижка діє при мінімальній сумі замовлення 300 грн. Ця акція не поєднується з іншими акціями.",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2Fimgonline-com-ua-697x379.jpg?alt=media&token=3bc59351-d9a2-4d26-ac0e-6dc09956076f",
-      "date": "2022-11-16T09:56:46.803Z",
+      "date": "2022-12-06T15:36:09.779Z",
       "id": 2
     }
   ],
@@ -29,6 +29,18 @@
       "path": "sets",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Fcategory%2Fnav-img-sets.svg?alt=media&token=1fe7087b-0a28-4034-84cf-4a54248796e9",
       "id": 3
+    },
+    {
+      "name": "Напої",
+      "path": "drink",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2Fnav-img-drinks.svg?alt=media&token=32943db2-fb2b-40af-a3fb-6662e6be1c56",
+      "id": 4
+    },
+    {
+      "name": "Соуси",
+      "path": "sauces",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2Ficon-souses.svg?alt=media&token=1be41166-f78c-4684-9703-3ec7952e8802",
+      "id": 5
     }
   ],
   "goods": [
@@ -45,9 +57,7 @@
       "weight": 280,
       "price": 232,
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2F1.-filadelfiya-z-lososem.jpg?alt=media&token=99872bec-03a9-4679-ba1c-db329500af9a",
-      "count": [
-        1
-      ],
+      "count":1,
       "id": 1
     },
     {
@@ -97,6 +107,22 @@
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2Fimgonline-com-ua-compressed.jpg?alt=media&token=09cf6666-b4c0-432a-8724-fa5956f099cc",
       "count": 1,
       "id": 5
+    },
+    {
+      "category": {
+        "name": "Соуси",
+        "path": "sauces",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2Ficon-souses.svg?alt=media&token=1be41166-f78c-4684-9703-3ec7952e8802",
+        "id": 5
+      },
+      "name": "Спайсі",
+      "path": "spaici",
+      "ingredients": "майонез",
+      "weight": 50,
+      "price": 34,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2Fspaici.png?alt=media&token=497fdbc4-8c88-4a67-9070-a57e774ce973",
+      "count": 1,
+      "id": 6
     }
   ]
 }

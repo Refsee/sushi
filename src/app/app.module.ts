@@ -18,10 +18,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { ActionsComponent } from './pages/actions/actions.component';
 import { ActionInfoComponent } from './pages/action-info/action-info.component';
 import { DeliveryComponent } from './pages/delivery/delivery.component';
-import { RolesComponent } from './pages/roles/roles.component';
-import { SetsComponent } from './pages/sets/sets.component';
-import { DrinkComponent } from './pages/drink/drink.component';
-import { SaucesComponent } from './pages/sauces/sauces.component';
 import { OfertaComponent } from './pages/oferta/oferta.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminActionComponent } from './admin/admin-action/admin-action.component';
@@ -30,8 +26,13 @@ import { AdminGoodsComponent } from './admin/admin-goods/admin-goods.component';
 import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
 
 import { ToastrModule } from 'ngx-toastr';
+import { ProductComponent } from './pages/product/product.component';
+import { ProductInfoComponent } from './pages/product-info/product-info.component';
+import { BasketComponent } from './pages/basket/basket.component';
+
+
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, AboutComponent, HomeComponent, ActionsComponent, ActionInfoComponent, DeliveryComponent, RolesComponent, SetsComponent, DrinkComponent, SaucesComponent, OfertaComponent, AdminComponent, AdminActionComponent, AdminCategoryComponent, AdminGoodsComponent, AdminOrderComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, AboutComponent, HomeComponent, ActionsComponent, ActionInfoComponent, DeliveryComponent, OfertaComponent, AdminComponent, AdminActionComponent, AdminCategoryComponent, AdminGoodsComponent, AdminOrderComponent, ProductComponent, ProductInfoComponent, BasketComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

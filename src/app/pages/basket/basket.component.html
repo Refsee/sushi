@@ -1,0 +1,57 @@
+<div class="header-busket" (click)="showBusket()">
+  <div class="basket-count">
+    <img
+      class="basket"
+      src="https://monosushi.com.ua/wp-content/themes/monosushi/img/basket.svg"
+      alt=""
+    />
+    <span>{{ totalCount }}</span>
+  </div>
+  <div class="basket-price">
+    <b class="total-price">{{ totalPrice }} </b>
+    <span>грн</span>
+  </div>
+</div>
+<div class="busket" [style.display]="isOpenBusket ? 'block' : 'none'">
+  <div class="busket__top" *ngFor="let product of basket">
+    <div class="product-item">
+      <div class="product-item__img">
+        <img [src]="product.imagePath" [alt]="product.name" />
+      </div>
+      <div
+        [routerLink]="['/product/' + product.category.path, product.id]"
+        class="product-item__name"
+      >
+        {{ product.name }}
+      </div>
+      <div class="product-item__controls">
+        <div class="controls">
+          <div class="controls__count">
+            <button (click)="productCount(product, false)" class="btn-count">
+              -
+            </button>
+            <input class="input-count" type="text" [value]="product.count" />
+            <button (click)="productCount(product, true)" class="btn-count">
+              +
+            </button>
+          </div>
+          <div class="controls__price">
+            <span>{{ product.price * product.count }}</span>
+            грн
+          </div>
+          <div (click)="deleteProduct(product)" class="delete">X</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="busket__bottom">
+    <div class="price-total">
+      Сума: <span>{{ totalPrice }}</span> грн.
+    </div>
+    <div>
+      <button [disabled]="totalCount == 0" class="btn btn-add">
+        Оформити замовлення
+      </button>
+    </div>
+  </div>
+</div>

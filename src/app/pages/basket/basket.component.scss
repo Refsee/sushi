@@ -1,0 +1,104 @@
+@import "../../shared/styles/var";
+@import "../../shared/styles/mixins";
+@import "../../shared//styles/animate";
+@import "../../shared/styles/base";
+
+.header-busket {
+  @include flexCenter();
+  width: 140px;
+  height: 95px;
+  background-color: $mainColor;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.basket-count {
+  position: relative;
+  span {
+    @include wh(22px, 22px, 14px);
+    position: absolute;
+    top: -5px;
+    left: 20px;
+    border-radius: 50%;
+    background-color: white;
+    text-align: center;
+    line-height: 22px;
+  }
+}
+.basket-img {
+  width: 90%;
+}
+
+.basket-price {
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.busket {
+  display: none;
+  position: absolute;
+  right: 0;
+  width: 700px;
+  z-index: 5;
+  border-top: 1px solid #ccc;
+  &__top {
+    padding: 10px 20px;
+    background-color: white;
+  }
+  &__bottom {
+    @include flexbetween();
+    padding: 10px 20px;
+    background-color: $mainColor;
+  }
+}
+
+.product-item {
+  @include flexbetween();
+  &__img {
+    img {
+      height: 70px;
+    }
+  }
+  &__name {
+    font-size: 18px;
+    font-weight: bold;
+    &:hover {
+      cursor: pointer;
+      color: $mainColor;
+    }
+  }
+  &__controls {
+    width: 200px;
+  }
+}
+
+.delete {
+  @include flexCenter();
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  background-color: brown;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.price-total {
+  font-size: 20px;
+  span {
+    font-weight: bold;
+  }
+}
+
+.btn-add {
+  width: 280px;
+  font-size: 16px;
+  background-color: white;
+  border-color: white;
+}

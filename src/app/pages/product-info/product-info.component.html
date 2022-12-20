@@ -1,0 +1,46 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="card">
+        <div class="card__img">
+          <img [src]="product.imagePath" width="500px" />
+        </div>
+        <div class="card__info">
+          <div class="title">
+            {{ product.name }}
+          </div>
+          <div class="text">
+            <p>
+              <span class="">Склад: </span>
+              {{ product.ingredients }}
+            </p>
+            <p>
+              <span class="">Вага: </span>
+              {{ product.weight }} г
+            </p>
+          </div>
+          <div class="card__controls">
+            <div class="controls">
+              <div class="controls__price">
+                <span>{{ product.price * product.count}}</span>
+                грн
+              </div>
+              <div class="controls__count">
+                <button (click)="productCount(product, false)"  class="btn-count">-</button>
+                <input
+                  class="input-count"
+                  type="text"
+                  [value]="product.count"
+                />
+                <button (click)="productCount(product, true)"  class="btn-count">+</button>
+              </div>
+              <div class="controls__btn">
+                <button (click)="addToBusket(product)" class="main-btn" >замовити</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
