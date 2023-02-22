@@ -123,10 +123,13 @@
     <div class="header-user">
       <a
         class="icon-user an--border"
-        [routerLink]="['/admin']"
+        [routerLink]="[loginUrl]"
         routerLinkActive="active"
         ><i class="fa-solid fa-user"></i
       ></a>
+    </div>
+    <div *ngIf="isLogin" class="header-user">
+      <div>{{loginName}}</div>
     </div>
     <app-basket></app-basket>
   </div>

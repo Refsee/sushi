@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div>
+        <form class="form" [formGroup]="formLogin"  (submit)="login()" >
+            <h3 class="form-title">Вхід в кабінет</h3>
+                <input class="form-control" formControlName='email'type="email" placeholder="Ваш email">
+                <input class="form-control" formControlName='password' type="password" placeholder="Пароль">
+            <button [disabled]="formLogin.invalid" class="main-btn" type="submit">
+                Увійти в кабінет
+              </button>
+              <div class="form__bottom">
+                <a class="" href="#">Забули пароль?</a>
+                <a class="" href="#">Зареєструватись</a>
+              </div>
+        </form>
+    </div>
+</div>

@@ -3,6 +3,35 @@
 @import "../../shared//styles/animate";
 @import "../../shared/styles/base";
 
+.container{
+  margin: auto;
+  margin-top: 50px;
+  width: 700px;
+  padding: 0;
+}
+
+.row-form{
+  width: 500px;
+  margin: 30px auto;
+
+}
+
+form{
+  width: 100%;
+}
+
+.form-title{
+  font-weight: bold;
+  margin-bottom:20px;
+}
+
+.main-btn{
+  padding: 0 20px;
+  height: 50px;
+  font-size: 20px
+}
+
+
 .header-busket {
   @include flexCenter();
   width: 140px;
@@ -33,4 +62,20 @@
 .basket-price {
   margin: 0 10px;
   font-size: 18px;
+}
+
+.price-out{
+  margin-top: 15px;
+  padding-top: 5px;
+  border-top:1px solid #ccc;
+  font-size: 20px;
+  text-align: right;
+  span {
+    font-weight: bold;
+  }
+}
+
+
+.m--1{
+  margin-top: 10px;
 }

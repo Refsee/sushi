@@ -57,7 +57,7 @@
       "weight": 280,
       "price": 232,
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/sushi-372a1.appspot.com/o/images%2Faction%2F1.-filadelfiya-z-lososem.jpg?alt=media&token=99872bec-03a9-4679-ba1c-db329500af9a",
-      "count":1,
+      "count": 1,
       "id": 1
     },
     {
@@ -124,5 +124,17 @@
       "count": 1,
       "id": 6
     }
+  ],
+  "auth":[
+    {"id":1,
+  "email":"admin@gmail.com",
+"password":"12345",
+"name":"Ivan Admin",
+"role":"ADMIN"},
+    {"id":2,
+  "email":"user@gmail.com",
+"password":"12345",
+"name":"Petro User",
+"role":"USER"}
   ]
 }

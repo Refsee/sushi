@@ -111,6 +111,10 @@
   display: flex;
   justify-content: space-between;
 }
+.fc {
+  display: flex;
+  justify-content: center;
+}
 
 .gf {
   height: 120px;
@@ -201,4 +205,76 @@
   &:active {
     transform: scale(0.8);
   }
+}
+
+
+
+
+
+.busket {
+  display: none;
+  position: absolute;
+  right: 0;
+  width: 700px;
+  z-index: 5;
+  border-top: 1px solid #ccc;
+  &__top {
+    padding: 10px 20px;
+    background-color: white;
+  }
+  &__bottom {
+    @include flexbetween();
+    padding: 10px 20px;
+    background-color: $mainColor;
+  }
+}
+
+.product-item {
+  @include flexbetween();
+  &__img {
+    img {
+      height: 70px;
+    }
+  }
+  &__name {
+    font-size: 18px;
+    font-weight: bold;
+    &:hover {
+      cursor: pointer;
+      color: $mainColor;
+    }
+  }
+  &__controls {
+    width: 200px;
+  }
+}
+
+.delete {
+  @include flexCenter();
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  background-color: brown;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.price-total {
+  font-size: 20px;
+  span {
+    font-weight: bold;
+  }
+}
+
+.btn-add {
+  width: 280px;
+  font-size: 16px;
+  background-color: white;
+  border-color: white;
 }

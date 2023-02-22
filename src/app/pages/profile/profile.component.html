@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="nav">
+      <div class="nav-list">
+        <button
+          class="nav-item"
+          [routerLink]="['/']"
+          routerLinkActive="active"
+        >
+          Особисті дані
+        </button>
+        <button
+          class="nav-item"
+          [routerLink]="['']"
+          routerLinkActive="active"
+        >
+          Історія замовлень
+        </button>
+        <button class="main-btn" (click)="logout()">Вихід</button>
+      </div>
+    </div>
+  </div>
+  
+

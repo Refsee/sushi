@@ -29,10 +29,13 @@ import { ToastrModule } from 'ngx-toastr';
 import { ProductComponent } from './pages/product/product.component';
 import { ProductInfoComponent } from './pages/product-info/product-info.component';
 import { BasketComponent } from './pages/basket/basket.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, AboutComponent, HomeComponent, ActionsComponent, ActionInfoComponent, DeliveryComponent, OfertaComponent, AdminComponent, AdminActionComponent, AdminCategoryComponent, AdminGoodsComponent, AdminOrderComponent, ProductComponent, ProductInfoComponent, BasketComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, AboutComponent, HomeComponent, ActionsComponent, ActionInfoComponent, DeliveryComponent, OfertaComponent, AdminComponent, AdminActionComponent, AdminCategoryComponent, AdminGoodsComponent, AdminOrderComponent, ProductComponent, ProductInfoComponent, BasketComponent, LoginComponent, ProfileComponent, CheckoutComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

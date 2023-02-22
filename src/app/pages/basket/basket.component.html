@@ -49,7 +49,7 @@
       Сума: <span>{{ totalPrice }}</span> грн.
     </div>
     <div>
-      <button [disabled]="totalCount == 0" class="btn btn-add">
+      <button (click)="goToCheckout()"[disabled]="totalCount == 0"  class="btn btn-add">
         Оформити замовлення
       </button>
     </div>
